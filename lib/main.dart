@@ -1,10 +1,15 @@
-
+import 'package:eldragon/cadastro.dart';
+import 'package:eldragon/formulario.dart';
 import 'package:flutter/material.dart';
-import 'package:telaprincipal/formulario/formulario.dart';
+
 void main() {
   runApp(TabBarDemo());
 }
+
+
 class TabBarDemo extends StatelessWidget {
+  const TabBarDemo({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -15,38 +20,32 @@ class TabBarDemo extends StatelessWidget {
             bottom: TabBar(
               tabs: [
                 Text("Home"),
-                Text("Olá"),
-                Text("OI"),
+                Text("Formulario"),
+                Text("Cadastro de confirmação"),
               ],
             ),
             title: Text('Tabs Demo'),
           ),
           body: TabBarView(
             children: [
-                MyApp(),
-
+                Cadastro(),
+                
+                Formulario(),
+                
                 Container(
-              color: Colors.blueGrey,
-              child: new Center(
-                child: new Text(
-                  "Segunda guia",
-                  style: TextStyle(),
+                  color: Colors.blueGrey,
+                  child: new Center(
+                    child: new Text(
+                      "Segunda guia",
+                      style: TextStyle(),
+                    ),
+                  ),
                 ),
-              ),
-            ),
-            new Container(
-              color: Colors.teal,
-              child: new Center(
-                child: new Text(
-                  "Terceira guia",
-                  style: TextStyle(),
-                ),
-              ),
-            ), 
+            
            ],
           ),
         ),
       ),
     );
-  }
+  }    
 }
